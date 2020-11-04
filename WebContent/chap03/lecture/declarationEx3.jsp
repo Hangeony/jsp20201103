@@ -59,6 +59,7 @@ String colorClass(int num) {
 </style>
 </head>
 <body>
+
 <%
 java.util.Set<Integer> lotto = genLotto();
 %>
