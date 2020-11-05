@@ -36,7 +36,7 @@ out.print("<br>");
 맞춘 갯수 : <%= cnt  %> 개 ,
 <% 
 if (cnt == 0) {
-    out.print("꼴등 !!!");
+    out.print("꽝 !!!");
 } else if (cnt == 1) {
 	out.print("6등 !!!");
 } else if (cnt == 2) {

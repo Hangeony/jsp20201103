@@ -11,7 +11,9 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <title>Insert title here</title>
 <style>
-*{margin: 0px; padding: o; box-sizing: border-box;}
+.num{
+
+}
 </style>
 </head>
 <body>
