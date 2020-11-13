@@ -1,7 +1,7 @@
-SELECT * FROM employee;
-SELECT * FROM bonus;        
+SELECT * FROM employee;    --
+SELECT * FROM bonus;       -- 
 SELECT * FROM department;  --ºÎ¼­
-SELECT * FROM salgrade;  
+SELECT * FROM salgrade;    --
 
 SELECT ename FROM employee;
 SELECT eno, ename FROM employee;
