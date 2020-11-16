@@ -73,3 +73,10 @@ select hiredate, to_char(hiredate,'yy/mon/dd/dy') from employee;
 
 --혼자해보기 5번 올해 몇일이 지났는지 출력하시오.
 select trunc(sysdate- to_date('2020/01/01','yyyy/mm/dd')) from dual;
+
+--혼자해복 6번 사원들의 상관 사번을 출력하되 상관이 없는 사원에 대해서는 null 값대신 0으로 출력
+select eno, ename, nvl2(manager, manager, 0) as manager from employee;
+
+--혼자해보기 7번 decode 함수로 직급에 따라 급여를 인상하도록 하시오. 직급이 anaityst인 사원은 200 salesman인사원....
+SELECT eno, ename, JOB, salary, decode(JOB, 'ANALYST', salary +200, 'SALESMAN', salary+180,
+'MANAGER', salary+150, 'CLERK',salary +100, salary)AS update_salary FROM employee;

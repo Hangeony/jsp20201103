@@ -1,5 +1,5 @@
 SELECT * FROM employee;    --
-SELECT * FROM bonus;       -- 
+SELECT * FROM bonus;       --보너스 
 SELECT * FROM department;  --부서
 SELECT * FROM salgrade;    --
 
