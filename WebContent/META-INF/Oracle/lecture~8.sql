@@ -14,12 +14,13 @@ select max(commission) from employee;
 select min(commission)from employee;
 select avg(commission)from employee;
 
+
 select count(job) from employee;
 select distinct(job)from employee;
 select count(distinct(job)) from employee;
 
-select ename, SUM (salary) from employee;
-select ename, max(salary)from employee;
+SELECT ename, SUM(salary) FROM employee; -- 오류 ?
+SELECT ename, MAX(salary) FROM employee; --오류
 
 select ename from employee
 where salary = (select max(salary) from employee);
