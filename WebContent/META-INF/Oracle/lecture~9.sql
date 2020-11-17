@@ -51,7 +51,7 @@ select job, min(salary) from employee
 group by job having not min(salary)<2000
 order by min(salary) desc;
 
---혼자해보기 7 각부서 부서번호 사원수 부서내 모든사원의 평균 급여를 출력하시오. 오류
+--혼자해보기 7 각부서 부서번호 사원수 부서내 모든사원의 평균 급여를 출력하시오
 select dno, count(*) as "Number of People", round(avg(salary),2) as "Salary"
 from employee group by dno order by dno asc;
 

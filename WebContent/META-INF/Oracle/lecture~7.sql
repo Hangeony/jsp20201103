@@ -6,7 +6,7 @@ FROM employee;
 SELECT ename, commission, nvl(commission, 0) FROM employee; --null인것을 영으로 표현
 
 SELECT nullif('a', 'a') FROM dual; --값이 같으면 null
-SELECT nullif('a', 'b') FROM dual;
+SELECT nullif('a', 'b') FROM dual;  --값이 다르면 앞에꺼 가 출력
 
 SELECT COALESCE('a','b',NULL,'c') FROM dual; --null값이 오기전에 먼제오는것을 찾는다
 SELECT COALESCE(NULL,'b',NULL,'c') FROM dual;
