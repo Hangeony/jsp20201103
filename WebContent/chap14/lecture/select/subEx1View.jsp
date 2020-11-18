@@ -5,11 +5,8 @@
 <% request.setCharacterEncoding("utf-8"); %>
 <%
 String eno = request.getParameter("eno");
-String sql = "SELECT e1.ename "
-		+"FROM employee e1, employee " 
-		+"e2 WHERE e2.eno = ? "
-		+"AND e1.manager = e2.eno ";
-
+String sql = "SELECT ename FROM employee " 
+			+"WHERE  eno = (SELECT  manager FROM employee WHERE eno = ?)"; 
 
 Class.forName("oracle.jdbc.driver.OracleDriver");
 String url = "jdbc:oracle:thin:@localhost:1521:orcl";
@@ -17,22 +14,16 @@ String id = "c##mydbms";
 String pw = "admin";
 
 Connection con = DriverManager.getConnection(url, id, pw);
-PreparedStatement stmt = con.prepareStatement(sql);
-stmt.setInt(1, Integer.valueOf(eno));
+PreparedStatement pstmt = con.prepareStatement(sql);
+pstmt.setInt(1, Integer.valueOf(eno));
+ResultSet rs = pstmt.executeQuery();
 
-ResultSet rs = stmt.executeQuery();
+String managerName = "사직서 써서 없음";
 
-List<String> list = new ArrayList<>();
-
-while(rs.next()){
-	list.add(rs.getString(1));
+if(rs.next()){
+	managerName = rs.getString(1);
 }
-
-stmt.close();
-con.close();
 %>
-
-
 
 <!DOCTYPE html>
 <html>
@@ -45,14 +36,6 @@ con.close();
 <title>Insert title here</title>
 </head>
 <body>
-<h1>찾았다 요놈!</h1>
-<%= eno %>님 놀고있는 후임 입니다.
-<ul>
-<%
-for(String name : list){
-%>
-<li><%=name %></li>
-<%} %>
-</ul>
+<h1><%=eno %>의 관리자는 <%= managerName %></h1>
 </body>
 </html>
