@@ -232,3 +232,10 @@ where other.hiredate>ward.hiredate and ward.ename='WARD' order by hiredate;
 --혼자해보기 11
 select other.ename, other.hiredate, mgr.ename, mgr.hiredate from employee mgr,employee other
 where other.manager=mgr.eno and other.hiredate <= mgr.hiredate;
+
+
+SELECt e.eno , e.ename ,e.hiredate, e.salary ,d.dname ,e2.ename
+From employee e , department d,employee e2 
+Where e.dno=d.dno
+AND e.manager =e2.eno
+ANd e.eno=7369;
