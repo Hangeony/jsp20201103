@@ -10,6 +10,13 @@
 <title>Insert title here</title>
 </head>
 <body>
+<c:if test="true">
+<h1>실행</h1>
+</c:if>
 
+<c:if test="false">
+<h1>no 실행</h1>
+</c:if>
+<!-- if의 참인 결과 값만 나온다  -->
 </body>
 </html>

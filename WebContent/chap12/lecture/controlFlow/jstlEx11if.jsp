@@ -10,6 +10,14 @@
 <title>Insert title here</title>
 </head>
 <body>
+<c:if test="${param.age< 15 }" var ="kid">
+추천영화 : 어벤져스
+</c:if>
 
+<br />
+
+<c:if test="${kid }">
+부모동의 필요 
+</c:if>
 </body>
 </html>

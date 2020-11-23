@@ -27,7 +27,7 @@ ${mylist[2] } <br />
 ${mylist[3] } <br />
 <hr />
 <%--
-${mylist.0 } <!-- 숫자로 표시할수 없음  -->
+${mylist.0 }  숫자로 표시할수 없음
  --%>
 ${mylist["0"] } <br />
 ${mylist["1"] } <br />

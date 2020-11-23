@@ -25,7 +25,7 @@ ${mymap } <!-- ${mymap } ==request.setAttribute("mymap", map);  -->
 ${mymap.a } <br /> <!-- a값을 찾는다. -->
 ${mymap.b } <br />
 ${mymap.c } <br /> <!--띄워쓰기 숫자는 .을 못쓴다  -->
-${mymap["3"] } <br /> <!-- 네모가로 갑을쓸때 작은 따움표 큰따움표 차이가 없다  -->
+${mymap["3"] } <br /> <!-- []의 값을 쓸때 작은 따움표 큰따움표 차이가 없다  -->
 ${mymap["my key"] } <br />
 ${mymap["class"] } <br />
 <hr />

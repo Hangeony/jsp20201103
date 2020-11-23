@@ -10,6 +10,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<c:if test="${dark }" >
+  <div style="background-color: black; color: white;">
+  sub.jsp
+  </div>
+</c:if>
 </body>
 </html>
