@@ -12,9 +12,9 @@
 </head>
 <body>
 <c:set/>
-<c:remove/>
+<%-- <c:remove/>
 <c:if/>
-<c:forEach/>
+<c:forEach/> --%>
 
 <!--여기서 C는  taglib prefix="c" 굉장히 많이쓰는 테그 -->
 </body>
