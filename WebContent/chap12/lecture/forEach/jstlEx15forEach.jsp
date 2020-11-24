@@ -1,9 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import = "java.util.*" %>
-<% request.setCharacterEncoding("utf-8"); %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!-- prefix = "c" 관습상 c를 씀 Core의 약자   -->
+<% request.setCharacterEncoding("utf-8"); %>
+<%
+//반복하고싶은 숫자만큼 begin="1" end= "3" 해주면뎀
+//var = "1" 은 
+%>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,11 +16,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<c:set/>
-<%-- <c:remove/>
-<c:if/>
-<c:forEach/>  값이 없어서 컴파일 에러 뜸 !--%>
-
-<!--여기서 C는  taglib prefix="c" 굉장히 많이쓰는 테그 -->
+<c:forEach var="i" begin="1" end= "3">
+<h1>반복 ${i}</h1>
+</c:forEach>
 </body>
 </html>
