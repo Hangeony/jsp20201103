@@ -12,5 +12,11 @@
 </head>
 <body>
 
+<c:if test="true">
+<h3>실행</h3>
+</c:if>
+
+<my:ex5attr myAttr="my value" myAttr2="my value2" />
+<!--required="true"을 사용하면 꼭 정의해서 사용해야 한다.  -->
 </body>
 </html>

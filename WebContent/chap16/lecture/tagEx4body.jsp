@@ -11,6 +11,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<my:ex4bodyTagDependent>
+<%
+out.print("Hello");
+%>
+${param.abc }
+</my:ex4bodyTagDependent>
 </body>
 </html>

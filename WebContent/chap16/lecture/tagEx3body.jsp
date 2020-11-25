@@ -11,6 +11,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<my:ex3bodyScriptless>
+<h1>Hello</h1>
+</my:ex3bodyScriptless>
 </body>
 </html>
