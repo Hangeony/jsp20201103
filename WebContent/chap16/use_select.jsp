@@ -16,3 +16,11 @@
 <tf:select name="genre" rock="락" balad="발라드" metal="메탈"/>
 </body>
 </html>
+
+<%-- 
+<%@ tag dynamic-attributes="optionMap" %> 키와 벨류로 옵션 엘레멘트를 만든것이다.
+
+아무거나 선택해서 써도 상관없다. 오늘 489P까지 한것음 변수의 생성부터는 안봐두 됨
+
+
+--%>
