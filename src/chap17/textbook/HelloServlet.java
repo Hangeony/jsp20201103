@@ -1,4 +1,4 @@
-package chap17;
+package chap17.textbook;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -10,16 +10,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class ServletEx07
+ * Servlet implementation class HelloServlet
  */
-@WebServlet("/ex07")
-public class ServletEx07 extends HttpServlet {
+@WebServlet(urlPatterns="/hello")
+public class HelloServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+      
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ServletEx07() {
+    public HelloServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -28,23 +28,26 @@ public class ServletEx07 extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		request.setCharacterEncoding("utf-8");
+		response.setContentType("text/html; charset=UTF-8");
+		
+		PrintWriter out = response.getWriter();
+		out.print("<html>");
+		out.print("<head><title>인사</title></head>");
+		out.print("<body>");
+		out.print("안녕하세요 ");
+		out.print(request.getParameter("name"));
+		out.print("님");
+		out.print("</body></html>");
+		
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("utf-8");
-		String name = request.getParameter("name");
-		String age = request.getParameter("age");
-		
-		response.setContentType("text/html; charset=UTF-8"); 
-		PrintWriter out = response.getWriter();
-		
-		out.print("<h3> 받은 이름 : " + name + "</h3>");
-		out.print("<h3> 받은 나이 : " + age + "</h3>");
+		// TODO Auto-generated method stub
+		doGet(request, response);
 	}
 
 }
