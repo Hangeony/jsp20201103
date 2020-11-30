@@ -45,10 +45,10 @@ public class DetailServlet extends HttpServlet {
 		Post post = list.get(Integer.parseInt(idx));
 		// request에 attribute로 담아서 
 		request.setAttribute("post", post);
-		// deatil.jsp에 forward
+		// deatil.jsp에 forward 시킴
 		String path = "/chap17/lecture/sample2/detail.jsp";
 		request.getRequestDispatcher(path).forward(request, response);
-		// 
+	
 	}
 
 	/**
