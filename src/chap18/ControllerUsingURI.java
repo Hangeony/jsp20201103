@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class ControllerUsingURI
  */
-@WebServlet("*do")
+//@WebServlet("*do")
 public class ControllerUsingURI extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	// <커맨드, 핸들러인스턴스> 매핑 정보 저장

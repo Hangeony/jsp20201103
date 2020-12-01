@@ -1,10 +1,6 @@
-       package chap17;
+package chap19.lecture;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-
-import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,17 +8,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class servletEx09
+ * Servlet implementation class Servlet01
  */
-//@WebServlet("/ex09")
-public class ServletEx09 extends HttpServlet {
+@WebServlet("/filter/ex1")
+public class Servlet01 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ServletEx09() {
+    public Servlet01() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,11 +26,7 @@ public class ServletEx09 extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		ServletConfig config = getServletConfig();
-		String url = config.getInitParameter("dburl");
-		System.out.println(url);
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		System.out.println("필터 예저 서블릿 1 doGet 메소드");
 	}
 
 	/**
