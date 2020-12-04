@@ -39,7 +39,7 @@ public class GuestBookServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
-		//ÆÄ¶ó¹ÌÅÍ ¾ò±â
+		//ï¿½Ä¶ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 		String title = request.getParameter("title");
 		String body = request.getParameter("body");
 		
@@ -54,18 +54,18 @@ public class GuestBookServlet extends HttpServlet {
 		String password = "admin"; // adminAdmin12
 		
 		try {
-		//1.µå¶óÀÌ¹ö ·Îµù
+		//1.ï¿½ï¿½ï¿½ï¿½Ì¹ï¿½ ï¿½Îµï¿½
 		Class.forName("oracle.jdbc.driver.OracleDriver");
-		//2.¿¬°á»ý¼º
+		//2.ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		Connection con = DriverManager.getConnection(url, user, password);
-		//3.statement»ý¼º
+		//3.statementï¿½ï¿½ï¿½ï¿½
 		PreparedStatement pstmt = con.prepareStatement(sql);
 		pstmt.setString(1, title);
 		pstmt.setString(2, body);
-		//4.Äõ¸® ½ÇÇà
-		pstmt.execute();
-		//5.°á°ú Ã³¸®
-		//6.statement, ¿¬°á´Ý±â
+		//4.ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+		pstmt.executeUpdate();
+		//5.ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½
+		//6.statement, ï¿½ï¿½ï¿½ï¿½Ý±ï¿½
 		pstmt.close();
 		con.close();
 		}catch (Exception e) {
