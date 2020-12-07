@@ -3,6 +3,7 @@ package chap17.sample3;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -49,28 +50,52 @@ public class DeatilServlet extends HttpServlet {
 		String url = "jdbc:oracle:thin:@localhost:1521:orcl";
 		String user = "c##mydbms"; //mydb28
 		String password = "admin"; // adminAdmin12
-		String sql ="SELECT title, body FROM post WHERE id = " +id;
+		String sql ="SELECT id, title, body FROM post WHERE id=?";
 
 		Post post = null;
+		Connection con = null;
+		PreparedStatement stmt = null;
+		ResultSet rs = null;
 		try {
 
-			Class.forName("oracle.jdbc.driver.OracleDriver");
+//			Class.forName("oracle.jdbc.driver.OracleDriver");
 
-			Connection con = DriverManager.getConnection(url, user, password);
+//			Connection con = DriverManager.getConnection(url, user, password);
+			con = DriverManager.getConnection(url, user, password);
 
-			Statement stmt = con.createStatement();
-			ResultSet rs = stmt.executeQuery(sql);
+//			Statement stmt = con.createStatement();
+			stmt = con.prepareStatement(sql);
+//			ResultSet rs = stmt.executeQuery(sql);
+			stmt.setInt(1, Integer.parseInt(id));
 			
-			while(rs.next()) {
+			rs = stmt.executeQuery();
+			
+			if(rs.next()) {
 			post = new Post();
-			post.setTitle(rs.getString(1));
-			post.setBody(rs.getString(2));
+			post.setId(rs.getInt(1));
+			post.setTitle(rs.getString(2));
+			post.setBody(rs.getString(3));
 			}
-			stmt.close();
-			con.close();
-			}catch (Exception e) {
+		}catch (Exception e) {
 				e.printStackTrace();
+			}finally {
+				// 6. close
+				if (stmt != null) {
+					try {
+						stmt.close();
+					} catch (SQLException e) {
+						e.printStackTrace();
+					}
+				}
+				if (con != null) {
+					try {
+						con.close();
+					} catch (SQLException e) {
+						e.printStackTrace();
+					}
+				}
 			}
+			
 			return post;
 		}
 
