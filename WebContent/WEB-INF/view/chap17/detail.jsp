@@ -16,13 +16,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-<c:url value="/sample3/post/detail" var="modifyUrl" >
+<c:url value="/sample3/post/remove" var="removeURL" >
   <c:param name="id">${param.id }</c:param>
 </c:url>
 
 <div class="container">
   <h1>쓴 글보기 </h1>
-  <form action="${modifyUrl }" method="post">
+  <form action="<%=request.getContextPath()%>/sample3/post/update" method="post">
   
   제목 : <input id="title-input" name="title" type="text" readonly value="${post.title }" /> <br />
   <textarea id="body-textarea" name="body" readonly cols="30" rows="5">${post.body }</textarea>
